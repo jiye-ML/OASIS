@@ -29,6 +29,7 @@ optimizerG = torch.optim.Adam(model.module.netG.parameters(), lr=opt.lr_g, betas
 optimizerD = torch.optim.Adam(model.module.netD.parameters(), lr=opt.lr_d, betas=(opt.beta1, opt.beta2))
 
 #--- the training loop ---#
+cur_iter = 0
 already_started = False
 start_epoch, start_iter = utils.get_start_iters(opt.loaded_latest_iter, len(dataloader))
 for epoch in range(start_epoch, opt.num_epochs):
